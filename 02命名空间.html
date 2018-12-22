@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02命名空间</title>
+    <script type="text/javascript">
+        //命名空间是通过事先约定的方法定义的；
+        //没法做私有性封装
+        var calculator={
+               a:123
+        }
+        calculator.console=function(data){
+            console.log(data)
+        }
+        calculator.add=function (v1,v2) {
+            this.console(123);
+            return v1+v2;
+        }
+        calculator.substract=function (v1,v2) {
+            return v1-v2;
+        }
+        calculator.multiply=function (v1,v2) {
+            return v1*v2;
+        }
+        calculator.divide=function (v1,v2) {
+            return v1/v2;
+        }
+        calculator.console.a=123
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
