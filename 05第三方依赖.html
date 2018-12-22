@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05第三方依赖</title>
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+    <input type="" name="v1" id="v1" value="">
+    <input type="" name="v2" id="v2" value="">
+    <script type="text/javascript">
+        var calculator=(function () {
+            var add=function (v1,v2) {
+               return v1+v2;
+        };
+            var substract=function (v1,v2) {
+            return v1-v2;
+        };
+             var multiply=function (v1,v2) {
+            return v1*v2;
+        };
+             var divide=function (v1,v2) {
+            return v1/v2;
+        };
+            return{
+                add:add,
+                substract:substract,
+                multiply:multiply,
+                divide:divide
+            }//解封装
+         })();
+        var calculator=(function (cal,$) {
+             cal.add2=function () {
+                var v1= $('#v1').val();
+                var v2= $('#v2').val();
+                return (v1-0)+(v2-0);//取到的是string类型数据，需要进行格式转换
+             }
+             return cal;
+        })(window.calculator||{},window.$);
+         var a=add();
+         alert(a.add(1,2))
+        // $:我在这告诉你我要jQuery
+        //依赖注入
+
+    </script>
+</body>
+</html>
